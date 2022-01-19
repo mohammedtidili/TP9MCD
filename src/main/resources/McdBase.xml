@@ -1,0 +1,63 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "https://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+    <!-- 1 Client bean pour instantiation  -->
+    <bean id="controllerClient" class="cigma.pfe.controller.ClientController" scope="prototype">
+        <property name="clientService" ref="serviceClient"></property>
+    </bean>
+
+    <bean id="serviceClient" class="cigma.pfe.service.ClientServiceImp" scope="prototype">
+        <property name="clientDao" ref="DaoClient"></property>
+    </bean>
+
+    <bean id="DaoClient" class="cigma.pfe.dao.ClientDaoImp" scope="prototype">
+    </bean>
+
+    <!-- 2 Carte Fidelio bean pour instantiation -->
+
+    <bean id="controllerCarteFidelio" class="cigma.pfe.controller.CarteFidelioController" scope="prototype">
+        <property name="carteFidelioService" ref="serviceCarteFidelio"></property>
+    </bean>
+
+    <bean id="serviceCarteFidelio" class="cigma.pfe.service.CarteFidetioServiceImp" scope="prototype">
+        <property name="carteFidelioDao" ref="DaoCarteFidelio"></property>
+    </bean>
+
+    <bean id="DaoCarteFidelio" class="cigma.pfe.dao.CarteFidelioDaoImp" scope="prototype"></bean>
+
+    <!-- 3 Facture bean pour instantiation -->
+
+    <bean id="controllerFacture" class="cigma.pfe.controller.FactureController" scope="prototype">
+        <property name="factureService" ref="serviceFacture"></property>
+    </bean>
+
+    <bean id="serviceFacture" class="cigma.pfe.service.FactureServiceImp" scope="prototype">
+        <property name="factureDao" ref="DaoFacture"></property>
+    </bean>
+
+    <bean id="DaoFacture" class="cigma.pfe.dao.FactureDaoImp" scope="prototype"></bean>
+
+    <!-- 4 Produit bean pour instantiation -->
+
+    <bean id="controllerProduit" class="cigma.pfe.controller.ProduitController" scope="prototype">
+        <property name="produitService" ref="serviceProduit"></property>
+    </bean>
+
+    <bean id="serviceProduit" class="cigma.pfe.service.ProduitServiceImp" scope="prototype">
+        <property name="produitDao" ref="DaoProduit"></property>
+    </bean>
+
+    <bean id="DaoProduit" class="cigma.pfe.dao.ProduitDaoImp" scope="prototype"></bean>
+
+    <!-- 5 Promotion bean pour instantiation -->
+
+    <bean id="controllerPromotion" class="cigma.pfe.controller.PromotionController" scope="prototype">
+        <property name="promotionService" ref="servicePromotion"></property>
+    </bean>
+
+    <bean id="servicePromotion" class="cigma.pfe.service.PromotionServiceImp" scope="prototype">
+        <property name="promotionDao" ref="DaoPromotion"></property>
+    </bean>
+
+    <bean id="DaoPromotion" class="cigma.pfe.dao.PromotionDaoImp" scope="prototype"></bean>
+
+</beans>
